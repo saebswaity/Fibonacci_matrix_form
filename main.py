@@ -24,9 +24,10 @@ def calculate_fibonacci_sequence(n_values):
 def plot_complex_sequence(X, Y):
     # Plot the points in the complex plane
     fig, ax = plt.subplots()
+    ax.set_facecolor('black')
     scatter = ax.scatter(X, Y, label='Fibonacci Points', c=(X**2 + Y**2)**.5, cmap='rainbow', s=20, alpha=1, marker='*')
-    ax.axhline(0, color='black', linewidth=0.5)
-    ax.axvline(0, color='black', linewidth=0.5)
+    ax.axhline(0, color='white', linewidth=0.5)
+    ax.axvline(0, color='white', linewidth=0.5)
     ax.set_aspect(1)
     plt.title('Complex Fibonacci Sequence as 2D Points in the Complex Plane')
     ax.legend()
@@ -34,13 +35,13 @@ def plot_complex_sequence(X, Y):
 
 def main():
     # Input values
-    n_values = np.linspace(1, 5, num=100)
+    n_values = np.linspace(1, 10, num=100)
 
     # Calculate Fibonacci sequence
     X, Y = calculate_fibonacci_sequence(n_values)
 
     # Plot the complex Fibonacci sequence
     plot_complex_sequence(X, Y)
-
+    
 if __name__ == "__main__":
     main()
